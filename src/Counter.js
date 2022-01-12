@@ -12,11 +12,19 @@ const Counter = () => {
       <div className="App-header">
         Counter
         <div className="App-link">
-          <Button name="counterSign" type="-" onClick={() => setVal(val - 1)}>
+          <Button
+            className="counterSign"
+            title="-"
+            onClick={() => setVal(val - 1)}
+          >
             -
           </Button>
           <input type="text" className="counterText" value={val} />
-          <Button name="counterSign" type="+" onClick={() => setVal(val + 1)}>
+          <Button
+            className="counterSign"
+            title="+"
+            onClick={() => setVal(val + 1)}
+          >
             +
           </Button>
         </div>

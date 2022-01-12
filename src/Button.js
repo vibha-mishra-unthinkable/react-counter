@@ -2,12 +2,11 @@ import React from "react";
 import "./App.css";
 
 const Button = (props) => {
-  const { name, onClick, type } = props;
-  console.log(props);
+  const { className, onClick, title } = props;
   return (
     <div>
-      <button className={name} onClick={onClick}>
-        {type}
+      <button className={className} onClick={onClick}>
+        {title}
       </button>
     </div>
   );
