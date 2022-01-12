@@ -7,26 +7,21 @@ const Counter = () => {
   useEffect(() => {
     document.title = val > 0 ? `Counter(${val})` : `Counter`;
   });
+  const handleDecrement = React.useCallback(() => {
+    setVal((prevState) => prevState - 1);
+  }, []);
+  const handleIncrement = React.useCallback(() => {
+    setVal((prevState) => prevState + 1);
+  }, []);
   return (
     <>
       <div className="App-header">
         Counter
         <div className="App-link">
-          <Button
-            className="counterSign"
-            title="-"
-            onClick={() => setVal(val - 1)}
-          >
-            -
-          </Button>
+          <Button className="counterSign" title="-" onClick={handleDecrement} />
+
           <input type="text" className="counterText" value={val} />
-          <Button
-            className="counterSign"
-            title="+"
-            onClick={() => setVal(val + 1)}
-          >
-            +
-          </Button>
+          <Button className="counterSign" title="+" onClick={handleIncrement} />
         </div>
       </div>
     </>
